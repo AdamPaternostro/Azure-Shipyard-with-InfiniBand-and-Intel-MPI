@@ -10,8 +10,9 @@ and architecture.  The goal was to take a process that was running on an on-prem
   Azure Batch under the covers.  It provides for an easy to use command line interface to create clusters, submit jobs,
   monitor jobs, clean up and tear down.
 
-- Docker Hub  / Azure Container Registry
-  Both were tested and tried during the project.  Both ran into performance issues when we pulled 40+ images in high demand.  See learnings below.
+
+### The Architecture
+![alt tag](https://raw.githubusercontent.com/AdamPaternostro/Azure-Shipyard-with-InfiniBand-and-Intel-MPI/master/images/MPI-Architecture.png)
 
 
 ### Easy to run
@@ -45,10 +46,6 @@ A single developer can provision a 40 node InfiniBand cluster with their code de
     5. Then use a seperate stage to copy your files over to the final Docker image
 
 2. You can also see my other repository where I show you how to access Azure Storage via C++ on Linux: https://github.com/AdamPaternostro/azure-storage-c-plus-plus
-
-
-### The Architecture
-![alt tag](https://raw.githubusercontent.com/AdamPaternostro/Azure-Shipyard-with-InfiniBand-and-Intel-MPI/master/images/MPI-Architecture.png)
 
 
 ### Monitoring your cluster
