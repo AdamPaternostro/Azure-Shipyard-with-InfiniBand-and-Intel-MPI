@@ -1,0 +1,38 @@
+monitoring:
+  location: eastus
+  resource_group: REMOVED
+  hostname_prefix: prom
+  ssh:
+    username: shipyardssh
+    ssh_public_key: /configs/shipyardssh_rsa.pub
+    ssh_private_key: /configs/shipyardssh_rsa
+  public_ip:
+    enabled: true
+    static: false
+  virtual_network:
+    name: REMOVED
+    resource_group: REMOVED
+    existing_ok: true
+    address_space: 10.0.0.0/16
+    subnet:
+      name: default
+      address_prefix: 10.0.0.0/24
+  network_security:
+    ssh:
+    - '*'
+    grafana:
+    - '*'
+# This is only if you have a jump box on VPN
+#    - 10.0.0.0/24
+    prometheus:
+    - 10.0.0.0/24
+  vm_size: STANDARD_D2_V2
+  accelerated_networking: false
+  services:
+    resource_polling_interval: 15
+    lets_encrypt:
+      enabled: true
+      use_staging_environment: true
+    prometheus:
+      port: 9090
+      scrape_interval: 10s

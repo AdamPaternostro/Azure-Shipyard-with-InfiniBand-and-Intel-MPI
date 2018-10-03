@@ -1,0 +1,9 @@
+job_specifications:
+- id: mpijob01
+  shm_size: 256m
+  tasks:
+  - docker_image: REMOVED.azurecr.io/mpidockerimage:latest
+    remove_container_after_exit: true
+    multi_instance:
+      num_instances: pool_current_dedicated
+    command: /tmp/run_mpijob.sh 2 /tmp/mpiAzurePOC myParameters

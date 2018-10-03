@@ -1,0 +1,12 @@
+batch_shipyard:
+  # This is a reference to the credentials yaml and not the actual name of your storage account
+  storage_account_settings: mystorageaccount
+
+  # Prevent Docker Hub or Azure Container Regristry from getting overloaded
+  delay_docker_image_preload: true
+data_replication:
+  concurrent_source_downloads: 10
+
+global_resources:
+  docker_images:
+  - REMOVED.azurecr.io/mpidockerimage:latest

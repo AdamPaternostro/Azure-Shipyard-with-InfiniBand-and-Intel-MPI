@@ -1,0 +1,30 @@
+pool_specification:
+  id: mpipool01
+  vm_size: Standard_H16mr
+  vm_count:
+    dedicated: 40
+    low_priority: 0
+  vm_configuration:
+    platform_image:
+      publisher: OpenLogic
+      offer: CentOS-HPC
+      sku: '7.4'
+      native: true
+  # Only 1 task per node since Intel MPI spins up the tasks for you
+  max_tasks_per_node: 1
+  # Turn on InfiniBand
+  inter_node_communication_enabled: true
+  ssh:
+    username: shipyardssh
+    expiry_days: 3650
+    ssh_public_key: /configs/shipyardssh_rsa.pub
+    ssh_private_key: /configs/shipyardssh_rsa
+  virtual_network:
+    arm_subnet_id: /subscriptions/REMOVED/resourceGroups/BatchEast/providers/Microsoft.Network/virtualNetworks/REMOVED/subnets/default
+  prometheus:
+    node_exporter:
+      enabled: true
+      port: 9100
+    cadvisor:
+      enabled: true
+      port: 8080
