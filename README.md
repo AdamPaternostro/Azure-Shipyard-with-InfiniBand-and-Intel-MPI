@@ -18,20 +18,17 @@ and architecture.  The goal was to take a process that was running on an on-prem
 ### Easy to run
 A single developer can provision a 40 node InfiniBand cluster with their code deployed in approximately five minutes.  No IT department required.
 
-1. Create a pool of computers with Docker installed along with InfiniBand installed:
-   ```
-   docker run --rm -it -v '/mycofigs/configs':/configs -e SHIPYARD_CONFIGDIR=/configs alfpark/batch-shipyard:3.5.2-cli pool add
-   ```
+```
+Create a pool of computers with Docker installed along with InfiniBand installed:
+docker run --rm -it -v '/mycofigs/configs':/configs -e SHIPYARD_CONFIGDIR=/configs alfpark/batch-shipyard:3.5.2-cli pool add
 
-2. Easy to submit a job:
-   ```
-   docker run --rm -it -v '/mycofigs/configs':/configs -e SHIPYARD_CONFIGDIR=/configs alfpark/batch-shipyard:3.5.2-cli jobs add --tail stdout.txt
-   ```
+Easy to submit a job:
+docker run --rm -it -v '/mycofigs/configs':/configs -e SHIPYARD_CONFIGDIR=/configs alfpark/batch-shipyard:3.5.2-cli jobs add --tail stdout.txt
 
-3. Easy to clean up resources (to stop the Azure billing)
-   ```
-   docker run --rm -it -v '/mycofigs/configs':/configs -e SHIPYARD_CONFIGDIR=/configs alfpark/batch-shipyard:3.5.2-cli pool del -y
-   ```
+Easy to clean up resources (to stop the Azure billing)
+docker run --rm -it -v '/mycofigs/configs':/configs -e SHIPYARD_CONFIGDIR=/configs alfpark/batch-shipyard:3.5.2-cli pool del -y
+```
+
 
 ### Performance
 1. The InfiniBand allows Intel MPI to pass messages between the nodes at 25 Gbps speeds.  Recent Azure announcements will take this to 100 Gbps.
