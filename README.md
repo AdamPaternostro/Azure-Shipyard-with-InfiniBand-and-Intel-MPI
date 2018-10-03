@@ -3,7 +3,6 @@ Lightning fast performance in Azure with InfiniBand, Azure Storage and Intel MPI
 
 I recently helped a customer to automate a High Performance Compute (HPC) project on Azure and wanted to share the below learnings 
 and architecture.  The goal was to take a process that was running on an on-prem on a cluster and take advantage of the cloud.
-We considered using Cycle Computing (https://cyclecomputing.com), but decided on a containerized approach using Docker.
 
 
 ### The Solution
