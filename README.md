@@ -57,6 +57,7 @@ You should always review the service limits page when designing a large scale ap
     5. Then use a seperate stage to copy your files over to the final Docker image
 
 ### The Architecture
+![alt tag](https://raw.githubusercontent.com/AdamPaternostro/Azure-Shipyard-with-InfiniBand-and-Intel-MPI/master/images/MPI-Architecture.png)
 
 ### Monitoring your cluster
-
+![alt tag](https://raw.githubusercontent.com/AdamPaternostro/Azure-Shipyard-with-InfiniBand-and-Intel-MPI/master/images/Monitoring.png)
